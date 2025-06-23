@@ -1,0 +1,13 @@
+use DATABASE MYDB;
+use schema my_schema;
+show tables;
+
+
+// PUT file://C:/Users/dell/Desktop/product.csv @%store;
+
+CREATE or replace stage my_stage; //CREATED STAGE 
+
+ 
+COPY into store    //LOADED DATA 
+FROM @my_stage/product.csv
+FILE_FORMAT = (TYPE = 'CSV'SKIP_HEADER = 1 )
