@@ -1,0 +1,7 @@
+use database mydb;
+use schema my_schema;
+show tables;
+
+create or replace table store_clone clone store;
+
+select * from store at (offset =>  -60*5);
